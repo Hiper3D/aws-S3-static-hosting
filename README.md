@@ -1,20 +1,33 @@
-# s3-static-hosting
-AWS Cloud Infrastructure: Static Website Hosting
-Project Overview
-This repository contains the source code for my personal portfolio, which I recently migrated from Vercel (a fully managed deployment platform) to custom AWS infrastructure. The goal of this migration was to gain hands-on experience provisioning cloud storage, managing IAM (Identity and Access Management - a web service that helps you securely control access to AWS resources) policies, and architecting secure cloud deployments.
+# ☁️ AWS Cloud Infrastructure: Static Website Deployment
 
-Live Demo
-Current Endpoint: http://first-demo-757038.s3-website.ap-south-1.amazonaws.com
-(Note: Currently awaiting AWS account verification to implement CloudFront and custom DNS routing)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-web-services&logoColor=white)
+![Amazon S3](https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=Amazon%20S3&logoColor=white)
+![IAM](https://img.shields.io/badge/AWS%20IAM-DD344C?style=for-the-badge&logo=amazonwebservices&logoColor=white)
 
-Cloud Architecture & Security
-Storage: Provisioned an Amazon S3 (Simple Storage Service - an object storage service offering high scalability and security) bucket in the ap-south-1 region to host static assets and optimize regional latency.
+## 📋 Project Overview
+This repository serves as the **Infrastructure Documentation** for my personal portfolio website. To demonstrate practical cloud engineering skills, I decoupled the application code from its hosting environment. I migrated the deployment from a fully managed PaaS (Platform as a Service - a cloud computing model that provides a platform allowing customers to develop, run, and manage applications) to custom AWS (Amazon Web Services - a comprehensive cloud computing platform) infrastructure.
 
-Security Best Practices: Intentionally disabled legacy ACLs (Access Control Lists - older, less secure rules that specify which users can access individual files).
+🔗 **[Click Here to View the Application Source Code]** *(Note: Replace this text with the link to your old Vercel code repo!)*
 
-Access Control: Implemented "Bucket Owner Enforced" settings and authored custom JSON (JavaScript Object Notation - a lightweight data-interchange format) bucket policies to centrally and securely manage s3:GetObject public read access.
+## 🚀 Live Environment
+* **Current S3 Endpoint:** [Portfolio Live Site](http://first-demo-757038.s3-website.ap-south-1.amazonaws.com) 
+* *Note: The site is currently served via HTTP (Hypertext Transfer Protocol - the foundation of data communication for the World Wide Web). HTTPS (Hypertext Transfer Protocol Secure - a secure communication protocol) implementation is pending AWS account verification for CDN (Content Delivery Network - a geographically distributed network of servers to deliver content faster) provisioning.*
 
-Next Steps (Planned Architecture)
-Provision an AWS CloudFront CDN (Content Delivery Network - a geographically distributed network of servers to deliver content faster) to globally cache the site.
+## 🏗️ Architecture & Security Implementations
 
-Secure the application with a free SSL (Secure Sockets Layer - the standard technology for keeping an internet connection secure) certificate via AWS ACM (AWS Certificate Manager - a service that lets you easily provision, manage, and deploy public and private SSL/TLS certificates).
+### 1. Storage & Hosting
+* Provisioned an **Amazon S3 (Simple Storage Service - an object storage service offering high scalability and security)** bucket configured specifically for static website hosting.
+* Deployed resources in the `ap-south-1` (Mumbai) region to ensure optimal latency for regional traffic across India.
+
+### 2. Identity & Access Management
+* **Modernized Security:** Enforced strict security baselines by permanently disabling legacy ACLs (Access Control Lists - older, less secure rules that specify which users can access individual files) using the "Bucket Owner Enforced" setting.
+* **Custom Bucket Policies:** Authored and attached a custom JSON (JavaScript Object Notation - a lightweight data-interchange format) bucket policy granting `s3:GetObject` permissions. This securely manages public read access to web assets while protecting the underlying bucket architecture.
+
+## 🗺️ Roadmap & Next Steps
+To elevate this infrastructure to production-grade, the following implementations are planned once AWS support lifts the new-account service restrictions:
+* **Global Caching:** Deploy an AWS CloudFront distribution to serve as a global CDN, drastically reducing latency for international visitors.
+* **Traffic Encryption:** Provision a free SSL/TLS (Secure Sockets Layer/Transport Layer Security - standard technologies for keeping an internet connection secure) certificate via AWS ACM (AWS Certificate Manager - a service that lets you easily provision, manage, and deploy public and private SSL/TLS certificates) to enforce HTTPS routing.
+* **Custom DNS Routing:** Map a custom professional domain to the CloudFront distribution.
+
+---
+*Built by Priyanshu Patra | Aspiring Cloud & Network Engineer*
