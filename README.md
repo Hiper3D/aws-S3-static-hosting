@@ -6,7 +6,7 @@
 ![Security](https://img.shields.io/badge/Security-OAC%20Enforced-brightgreen?style=for-the-badge)
 
 ## 📋 Project Overview
-This repository serves as the Infrastructure Documentation for my personal portfolio website. To demonstrate practical cloud engineering skills, I decoupled the application code from its hosting environment. I successfully migrated the deployment from a fully managed PaaS [Platform as a Service - a cloud computing model that provides a platform allowing customers to develop, run, and manage applications] to a custom, production-grade AWS [Amazon Web Services - a comprehensive cloud computing platform] infrastructure.
+This repository serves as the Infrastructure Documentation for my personal portfolio website. To demonstrate practical cloud engineering skills, I decoupled the application code from its hosting environment. I successfully migrated the deployment from a fully managed PaaS to a custom, production-grade AWS infrastructure.
 
 💻 **Application Source Code:** [View the MyPortfolio Repository Here](https://github.com/Hiper3D/MyPortfolio)
 
